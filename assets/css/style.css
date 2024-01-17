@@ -7,7 +7,16 @@
   padding: 0;
 }
 
-/* setting font to body */
-body {
+/* setting font to body (may be needed later) */
+/* body {
   font-family: "Lato", sans-serif;
+} */
+
+/* mainContainer */
+
+/* header section */
+
+/* hero section */
+.icon {
+  font-size: 5.5em !important;
 }
