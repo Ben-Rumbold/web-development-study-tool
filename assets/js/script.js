@@ -1,5 +1,4 @@
 const APIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
-console.log("Api key Youtube", APIkey);
 const searchInput = $("#search-input"); //search button
 const searchQuery = searchInput.val();
 const iframeContainer = $("#testing-video-iframe");
@@ -23,6 +22,7 @@ fetch(QUERY_URL)
     console.error("Error:", error);
   });
 
+//function to creaite Youtube Iframe
 function youtubeIFrame(vidID) {
   const iframe = `<iframe
       width="560"
