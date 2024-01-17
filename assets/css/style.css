@@ -1,0 +1,19 @@
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* setting font to body (may be needed later) */
+/* body {
+  font-family: "Lato", sans-serif;
+} */
+
+/* ----- hero section ----- */
+/* icons */
+.icon {
+  font-size: 5.5em !important;
+}
