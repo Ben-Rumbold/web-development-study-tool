@@ -12,6 +12,9 @@
   font-family: "Lato", sans-serif;
 } */
 
+header {
+  background-color: brown;
+}
 /* ----- hero section ----- */
 /* icons */
 .icon {
