@@ -1,186 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Study Tool</title>
+    <!-- favicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/images/Logo-1.ico" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Development Study Tool</title>
-  <!-- favicon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <!-- bootstrap css cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
 
-  <!-- bootstrap css cdn -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
-
-  <!-- fontawesome (may be needed later) -->
-  <!-- <link
+    <!-- fontawesome (may be needed later) -->
+    <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     /> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- google fonts (may be needed later) -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- google fonts (may be needed later) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     /> -->
 
-  <!-- custom css -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
-  <!-- modal)-->
-  <div class="modal" id="myModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Cookie Monster!</h5>
-        </div>
-        <div class="modal-body">
-          <p>We use cookies to improve your experience on our site. By using our site, you agree to our use of cookies.
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="okayBtn" data-dismiss="modal">
-            Okay
-          </button>
-          <button type="button" class="btn btn-secondary" id="closeBtn" data-dismiss="modal">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- header section -->
-  <header class="flex justify-content-center align-items-center text-white bg-dark p-2 mb-5">
-    <h1 class="display-3 text-center mt-3 mb-2">
-      <b>Web Development Study Tool</b>
-    </h1>
-
-    <p class="display-6 text-center">
-      Helping you to grow on your Web Development journey!
-    </p>
-  </header>
-  <!-- main container -->
-  <div class="container">
-    <!-- hero section -->
-    <div class="container border-bottom border-secondary-subtle pb-4 g-0">
-      <div class="row">
-        <div class="col-6 col-md-3">
-          <div class="card bg-body-tertiary">
-            <i class="fa-brands fa-html5 icon text-center mt-3"></i>
-            <div class="card-body">
-              <h3>HTML</h3>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+  <body>
+    <!-- modal)-->
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cookie Monster!</h5>
           </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card bg-body-tertiary">
-            <i class="fa-brands fa-css3-alt icon text-center mt-3"></i>
-            <div class="card-body">
-              <h3>CSS</h3>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+          <div class="modal-body">
+            <p>
+              We use cookies to improve your experience on our site. By using
+              our site, you agree to our use of cookies.
+            </p>
           </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card bg-body-tertiary">
-            <i class="fa-brands fa-js icon text-center mt-3"></i>
-            <div class="card-body">
-              <h3>JavaScript</h3>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card bg-body-tertiary">
-            <i class="fa-brands fa-bootstrap icon text-center mt-3"></i>
-            <div class="card-body">
-              <h3>Frameworks</h3>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="okayBtn"
+              data-dismiss="modal"
+            >
+              Okay
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="closeBtn"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <!-- input section -->
-    <div class="container my-4">
-      <div class="row">
-        <div class="py-3 border border-secondary-subtle rounded-2 bg-body-tertiary">
-          <div class="container-fluid">
-            <form class="row d-flex" role="search">
-              <div class="col-8 ms-auto">
-                <input class="form-control me-2 border border-secondary-subtle" id="search-input" type="search"
-                  placeholder="Search" aria-label="Search" />
+
+    <!-- header section -->
+    <header
+      class="flex justify-content-center align-items-center text-white bg-dark p-2 mb-5"
+    >
+      <h1 class="display-3 text-center mt-3 mb-2">
+        <b>Web Development Study Tool</b>
+      </h1>
+
+      <p class="display-6 text-center">
+        Helping you to grow on your Web Development journey!
+      </p>
+    </header>
+    <!-- main container -->
+    <div class="container">
+      <!-- hero section -->
+      <div class="container border-bottom border-secondary-subtle pb-4 g-0">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <div class="card bg-body-tertiary">
+              <i class="fa-brands fa-html5 icon text-center mt-3"></i>
+              <div class="card-body">
+                <h3>HTML</h3>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
               </div>
-              <div class="col-2 me-auto">
-                <button class="btn btn-outline-success btn-block" id="search-btn" style="width: 100%" type="submit">
-                  Search
-                </button>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card bg-body-tertiary">
+              <i class="fa-brands fa-css3-alt icon text-center mt-3"></i>
+              <div class="card-body">
+                <h3>CSS</h3>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
               </div>
-            </form>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card bg-body-tertiary">
+              <i class="fa-brands fa-js icon text-center mt-3"></i>
+              <div class="card-body">
+                <h3>JavaScript</h3>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card bg-body-tertiary">
+              <i class="fa-brands fa-bootstrap icon text-center mt-3"></i>
+              <div class="card-body">
+                <h3>Frameworks</h3>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- content section -->
-    <div class="container mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary">
-      <div class="row display-6 mt-3 mx-2 border-bottom border-secondary-subtle">
-        <div class="col-6 text-center" id="youtube-header">
-          <p><b>YouTube</b></p>
-        </div>
-        <div class="col-6 text-center" id="wiki-header">
-          <p><b>Wikipedia</b></p>
+      <!-- input section -->
+      <div class="container my-4">
+        <div class="row">
+          <div
+            class="py-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+          >
+            <div class="container-fluid">
+              <form class="row d-flex" role="search">
+                <div class="col-8 ms-auto">
+                  <input
+                    class="form-control me-2 border border-secondary-subtle"
+                    id="search-input"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </div>
+                <div class="col-2 me-auto">
+                  <button
+                    class="btn btn-outline-success btn-block"
+                    id="search-btn"
+                    style="width: 100%"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row mb-3">
-        <div class="col-6" id="youtube-iframe"></div>
-        <div class="col-6" id="wiki-container"></div>
+      <!-- content section -->
+      <div
+        class="container mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+      >
+        <div
+          class="row display-6 mt-3 mx-2 border-bottom border-secondary-subtle"
+        >
+          <div class="col-6 text-center" id="youtube-header">
+            <p><b>YouTube</b></p>
+          </div>
+          <div class="col-6 text-center" id="wiki-header">
+            <p><b>Wikipedia</b></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6" id="youtube-iframe"></div>
+          <div class="col-6" id="wiki-container"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- dayJs (may be needed later) -->
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- dayJs (may be needed later) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
-  <!-- jQuery cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Popper.js (required for Bootstrap) -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
+    <!-- Popper.js (required for Bootstrap) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Bootstrap JavaScript bundle (includes Popper.js) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript bundle (includes Popper.js) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- local javaScript -->
-  <script src="./assets/js/script.js"></script>
-</body>
-
+    <!-- local javaScript -->
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
