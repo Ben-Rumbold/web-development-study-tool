@@ -17,3 +17,21 @@
 .icon {
   font-size: 5.5em !important;
 }
+
+/* adds border between youtube and wiki sections */
+#youtube-header,
+#youtube-iframe {
+  border-right: 1.8px solid rgb(195, 195, 195);
+}
+
+/* individual wiki containers */
+.wikiElContainer {
+  margin: 20px;
+  padding: 10px 20px;
+  border: 1.8px solid rgb(195, 195, 195);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

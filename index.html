@@ -116,6 +116,7 @@
                 <div class="col-8 ms-auto">
                   <input
                     class="form-control me-2 border border-secondary-subtle"
+                    id="search-input"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
@@ -124,17 +125,35 @@
                 <div class="col-2 me-auto">
                   <button
                     class="btn btn-outline-success btn-block"
-                    id="search-input"
+                    id="search-btn"
                     style="width: 100%"
                     type="submit"
                   >
                     Search
                   </button>
                 </div>
-                <div id="testing-video-iframe"></div>
               </form>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- content section -->
+      <div
+        class="container mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+      >
+        <div
+          class="row display-6 mt-3 mx-2 border-bottom border-secondary-subtle"
+        >
+          <div class="col-6 text-center" id="youtube-header">
+            <p><b>YouTube</b></p>
+          </div>
+          <div class="col-6 text-center" id="wiki-header">
+            <p><b>Wikipedia</b></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6" id="youtube-iframe"></div>
+          <div class="col-6" id="wiki-container"></div>
         </div>
       </div>
     </div>
