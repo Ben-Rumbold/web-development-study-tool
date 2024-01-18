@@ -1,4 +1,5 @@
-const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
+// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
+const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const searchInputEl = $("#search-input"); // search input element
 const searchQuery = searchInputEl.val(); // search input value
 const searchBtnEl = $("#search-btn"); // search button element
