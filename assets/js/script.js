@@ -25,8 +25,9 @@ fetch(QUERY_URL)
 //function to creaite Youtube Iframe
 function youtubeIFrame(vidID) {
   const iframe = `<iframe
-      width="560"
-      height="315"
+      width="500"
+      height="300"
+      class="p-4"
       src="https://www.youtube.com/embed/${vidID}"
       title="YouTube video player"
       frameborder="0"
