@@ -76,3 +76,5 @@ searchBtnEl.click(function (event) {
 
   searchWiki();
 });
+
+//daria feature//
