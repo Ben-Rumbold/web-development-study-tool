@@ -12,40 +12,42 @@ searchBtnEl.click(function (event) {
   console.log(`User has inputted: "${searchQuery}"`);
 
   // ---------- search youtube section ----------
-  var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
-
-  fetch(youtubeQueryUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      // Parse the response and retrieve the title of the videos
-      const videoId = data.items[0].id.videoId;
-      const videoURL = `https://youtube.com/watch?v=${videoId}`;
-      console.log(videoURL);
-      youtubeIFrame(videoId); //call function
-      //   const test = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${APIkey}`;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  
+  function getYoutubeAPI() {
+    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
+    fetch(youtubeQueryUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        // Parse the response and retrieve the title of the videos
+        const videoId = data.items[0].id.videoId;
+        const videoURL = `https://youtube.com/watch?v=${videoId}`;
+        console.log(videoURL);
+        youtubeIFrame(videoId); //call function
+        //   const test = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${APIkey}`;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   // function to create Youtube Iframe
-  function youtubeIFrame(vidID) {
-    const iframe = `<iframe
-         width="500"
-         height="300"
-         class="p-4"
-         src="https://www.youtube.com/embed/${vidID}"
-         title="YouTube video player"
-         frameborder="0"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-         allowfullscreen
-       ></iframe>`;
+    function youtubeIFrame(vidID) {
+      const iframe = `<iframe
+          width="500"
+          height="300"
+          class="p-4"
+          src="https://www.youtube.com/embed/${vidID}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>`;
 
-    youtubeIframeContainer.append(iframe);
-  }
+      youtubeIframeContainer.append(iframe);
+    }
 
   // ---------- search wiki function ----------
   function searchWiki() {
@@ -74,6 +76,8 @@ searchBtnEl.click(function (event) {
     });
   }
 
+  //calling the functions//
+  getYoutubeAPI();
   searchWiki();
 });
 
