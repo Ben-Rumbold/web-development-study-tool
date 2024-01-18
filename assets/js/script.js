@@ -1,3 +1,13 @@
+// modal function
+$(document).ready(function () {
+  $("#myModal").modal("show");
+
+  // Handle button clicks
+  $("#okayBtn, #closeBtn").on("click", function () {
+    $("#myModal").modal("hide");
+  });
+});
+
 // const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
 const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const searchInputEl = $("#search-input"); // search input element
