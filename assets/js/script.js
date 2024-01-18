@@ -1,3 +1,11 @@
+// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
+const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
+const searchInputEl = $("#search-input"); // search input element
+const searchQuery = searchInputEl.val(); // search input value
+const searchBtnEl = $("#search-btn"); // search button element
+const youtubeIframeContainer = $("#youtube-iframe");
+const wikiContainer = $("#wiki-container");
+
 // modal function
 $(document).ready(function () {
   $("#myModal").modal("show");
@@ -8,21 +16,13 @@ $(document).ready(function () {
   });
 });
 
-// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
-const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
-const searchInputEl = $("#search-input"); // search input element
-const searchQuery = searchInputEl.val(); // search input value
-const searchBtnEl = $("#search-btn"); // search button element
-const youtubeIframeContainer = $("#youtube-iframe");
-const wikiContainer = $("#wiki-container");
-
 searchBtnEl.click(function (event) {
   // ----- search input value test -----
   event.preventDefault();
   const searchQuery = searchInputEl.val();
   console.log(`User has inputted: "${searchQuery}"`);
   // ---------- search youtube section ----------
-  
+
   function getYoutubeAPI() {
     var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
@@ -43,14 +43,14 @@ searchBtnEl.click(function (event) {
       .catch((error) => {
         console.error("Error:", error);
       });
-  };
+  }
   // function to create Youtube Iframe
-    function youtubeIFrame(vidID) {
-      // copied the wikipedia display attributes (displayWikiResults) and function structure
-      youtubeIframeContainer.empty();
-      const youtubeResultElement = $("<div>").addClass("youtubeElContainer");
-      youtubeResultElement.html(
-        `<iframe
+  function youtubeIFrame(vidID) {
+    // copied the wikipedia display attributes (displayWikiResults) and function structure
+    youtubeIframeContainer.empty();
+    const youtubeResultElement = $("<div>").addClass("youtubeElContainer");
+    youtubeResultElement.html(
+      `<iframe
           class=""
           src="https://www.youtube.com/embed/${vidID}"
           title="YouTube video player"
@@ -58,9 +58,9 @@ searchBtnEl.click(function (event) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>`
-      );
-      youtubeIframeContainer.append(youtubeResultElement);
-    }
+    );
+    youtubeIframeContainer.append(youtubeResultElement);
+  }
 
   // ---------- search wiki function ----------
   function searchWiki() {

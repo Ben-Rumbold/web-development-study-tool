@@ -6,6 +6,13 @@
   margin: 0;
   padding: 0;
 }
+/* modal stile */
+.modal-dialog {
+  position: fixed;
+  top: 70%;
+  left: 70%;
+  margin-right: 20px;
+}
 
 /* setting font to body (may be needed later) */
 /* body {
@@ -25,7 +32,8 @@
 }
 
 /* individual wiki containers */
-.wikiElContainer, .youtubeElContainer {
+.wikiElContainer,
+.youtubeElContainer {
   margin: 20px;
   padding: 10px 20px;
   border: 1.8px solid rgb(195, 195, 195);
