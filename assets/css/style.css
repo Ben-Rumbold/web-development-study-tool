@@ -46,3 +46,22 @@
 footer {
   height: 40px;
 }
+
+.header-logo {
+  height: 105px; 
+  width: auto;
+}
+
+/* For small device */
+@media (max-width: 576px) {
+  .header-logo {
+    height: 60px;
+  }
+}
+
+/* For small to medium devices*/
+@media (min-width: 577px) and (max-width: 768px) {
+  .header-logo {
+    height: 80px;
+  }
+}
