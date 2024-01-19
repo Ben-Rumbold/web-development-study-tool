@@ -67,7 +67,6 @@ searchBtnEl.click(function (event) {
     var wikiQueryUrl = `https://en.wikipedia.org/w/api.php?&action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=1&srsearch=${encodeURIComponent(
       searchQuery
     )}`;
-    // console.log(wikiQueryUrl); // test
     fetch(wikiQueryUrl)
       .then((wikiResponse) => wikiResponse.json())
       .then((wikiData) => {
@@ -90,4 +89,9 @@ searchBtnEl.click(function (event) {
   getYoutubeAPI();
   searchWiki();
 });
-//daria feature//
+
+// footer live year dayJS
+$(function () {
+  let year = dayjs().format("YYYY");
+  $("#current-year").text(year);
+});

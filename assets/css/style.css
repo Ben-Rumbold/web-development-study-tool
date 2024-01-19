@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* modal stile */
 .modal-dialog {
   position: fixed;
@@ -14,12 +15,10 @@
   margin-right: 20px;
 }
 
-/* setting font to body (may be needed later) */
-/* body {
-  font-family: "Lato", sans-serif;
-} */
+.main-container {
+  min-height: calc(100vh - 269px);
+}
 
-/* ----- hero section ----- */
 /* icons */
 .icon {
   font-size: 5.5em !important;
@@ -42,4 +41,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  height: 40px;
 }
