@@ -51,7 +51,7 @@ searchBtnEl.click(function (event) {
     const youtubeResultElement = $("<div>").addClass("youtubeElContainer");
     youtubeResultElement.html(
       `<iframe
-          class=""
+          class="youtube-video"
           src="https://www.youtube.com/embed/${vidID}"
           title="YouTube video player"
           frameborder="0"
