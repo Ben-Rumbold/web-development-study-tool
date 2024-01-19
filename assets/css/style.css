@@ -7,12 +7,13 @@
   padding: 0;
 }
 
-/* modal stile */
+/* modal */
 .modal-dialog {
   position: fixed;
-  top: 70%;
-  left: 70%;
-  margin-right: 20px;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  max-width: 300px;
 }
 
 .main-container {
@@ -24,17 +25,17 @@
   font-size: 5.5em !important;
 }
 
-/* adds border between youtube and wiki sections */
-#youtube-header,
+/* adds border between youtube and wiki sections (not currently needed) */
+/* #youtube-header,
 #youtube-iframe {
   border-right: 1.8px solid rgb(195, 195, 195);
-}
+} */
 
 /* individual wiki containers */
 .wikiElContainer,
 .youtubeElContainer {
   margin: 20px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border: 1.8px solid rgb(195, 195, 195);
   border-radius: 5px;
   display: flex;
@@ -43,6 +44,30 @@
   align-items: center;
 }
 
+.youtube-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 5px;
+}
+
 footer {
   height: 40px;
+}
+
+/* media query for content section borders/ padding */
+/* Apply styles for screens with a width of 768 pixels or larger (medium and above) */
+@media (min-width: 768px) {
+  .border-top-on-md {
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* modal media query */
+@media (max-width: 575px) {
+  .modal-dialog {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    max-width: 200px;
+  }
 }

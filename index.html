@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Development Study Tool</title>
 
+    <!-- font awesome link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -23,28 +24,12 @@
       crossorigin="anonymous"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- google fonts (may be needed later) -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-      rel="stylesheet"
-    /> -->
-
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
-    <!-- modal)-->
+    <!-- modal -->
     <div class="modal" id="myModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -81,9 +66,9 @@
 
     <!-- header section -->
     <header
-      class="flex justify-content-center align-items-center text-white bg-dark p-2 mb-5"
+      class="flex justify-content-center align-items-center text-white bg-dark p-2 mb-4 mb-xl-5"
     >
-      <h1 class="display-3 text-center mt-3 mb-2">
+      <h1 class="display-3 text-center mt-2 mb-sm-3 mb-2">
         <b>Web Development Study Tool</b>
       </h1>
 
@@ -94,52 +79,55 @@
     <!-- main container -->
     <div class="container main-container">
       <!-- hero section -->
-      <div class="container border-bottom border-secondary-subtle pb-4 g-0">
+      <div
+        class="container border-bottom border-secondary-subtle pb-2 pb-lg-4 g-0"
+      >
         <div class="row">
-          <div class="col-6 col-md-3">
-            <div class="card bg-body-tertiary">
+          <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-sm-4 mb-lg-0">
+            <div class="card bg-body-tertiary h-100">
               <i class="fa-brands fa-html5 icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>HTML</h3>
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  All the cards now have diferent text, but the cards will all
+                  be the same height due to the 'h-100' class!
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card bg-body-tertiary">
+          <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-sm-4 mb-lg-0">
+            <div class="card bg-body-tertiary h-100">
               <i class="fa-brands fa-css3-alt icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>CSS</h3>
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  The cards are also resposive at diferent screen sizes, and go
+                  from being next to each other to stacking upon each other!
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card bg-body-tertiary">
+          <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-lg-0">
+            <div class="card bg-body-tertiary h-100">
               <i class="fa-brands fa-js icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>JavaScript</h3>
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  We could also make these cards clickable, and when clicked,
+                  that specific topic gets automatically searched in the search
+                  bar!
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card bg-body-tertiary">
+          <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-lg-0">
+            <div class="card bg-body-tertiary h-100">
               <i class="fa-brands fa-bootstrap icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>Frameworks</h3>
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  The text in these cards obviously needs to be changed to a
+                  brief explanation of the topic that they represent!
                 </p>
               </div>
             </div>
@@ -147,14 +135,16 @@
         </div>
       </div>
       <!-- input section -->
-      <div class="container my-4">
+      <div class="container col-11 col-sm-12 my-4">
         <div class="row">
           <div
             class="py-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
           >
             <div class="container-fluid">
               <form class="row d-flex" role="search">
-                <div class="col-8 ms-auto">
+                <div
+                  class="col-12 col-sm-8 mx-auto mb-3 mb-sm-0 mx-sm-0 ms-sm-auto"
+                >
                   <input
                     class="form-control me-2 border border-secondary-subtle"
                     id="search-input"
@@ -163,7 +153,7 @@
                     aria-label="Search"
                   />
                 </div>
-                <div class="col-2 me-auto">
+                <div class="col-6 col-sm-3 col-md-2 mx-auto mx-sm-0 me-sm-auto">
                   <button
                     class="btn btn-outline-success btn-block"
                     id="search-btn"
@@ -180,24 +170,42 @@
       </div>
       <!-- content section -->
       <div
-        class="container mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+        class="container col-11 col-sm-12 mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
       >
-        <div
-          class="row display-6 mt-3 mx-2 border-bottom border-secondary-subtle"
-        >
-          <div class="col-6 text-center" id="youtube-header">
-            <p><b>YouTube</b></p>
+        <div class="row mt-2 mt-sm-3">
+          <div
+            class="col-12 col-md-6 order-1 display-6 text-center border-bottom border-secondary-subtle"
+            id="wiki-header"
+          >
+            <p>
+              <b>Wikipedia</b>
+            </p>
           </div>
-          <div class="col-6 text-center" id="wiki-header">
-            <p><b>Wikipedia</b></p>
+          <div
+            class="col-12 col-md-6 order-2 order-md-3"
+            id="wiki-container"
+          ></div>
+          <div
+            class="col-12 col-md-6 order-3 order-md-2 display-6 text-center order-md-2 pt-2 border-top border-bottom border-top-on-md border-secondary-subtle"
+            id="youtube-header"
+          >
+            <p>
+              <b>YouTube</b>
+            </p>
           </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-6" id="youtube-iframe"></div>
-          <div class="col-6" id="wiki-container"></div>
+          <div class="col-12 col-md-6 order-4" id="youtube-iframe"></div>
         </div>
       </div>
     </div>
+    <!-- footer  -->
+    <footer
+      class="flex justify-content-center align-items-center text-white bg-dark pt-2"
+    >
+      <p class="text-center">
+        @ Web Development Study Tool <span id="current-year"></span>
+      </p>
+    </footer>
+
     <!-- dayJs (may be needed later) -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
@@ -220,12 +228,5 @@
 
     <!-- local javaScript -->
     <script src="./assets/js/script.js"></script>
-    <footer
-      class="flex justify-content-center align-items-center text-white bg-dark pt-2"
-    >
-      <p class="text-center">
-        @ Web Development Study Tool <span id="current-year"></span>
-      </p>
-    </footer>
   </body>
 </html>
