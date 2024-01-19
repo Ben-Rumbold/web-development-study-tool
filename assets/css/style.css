@@ -63,6 +63,13 @@ footer {
   }
 }
 
+/* For small to medium devices*/
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .header-logo {
+    height: 105px;
+  }
+}
+
 /* modal media query */
 @media screen and (max-width: 575px) {
   .modal-dialog {
@@ -71,14 +78,6 @@ footer {
     max-width: 200px;
   }
   .header-logo {
-    height: 105px;
-    width: auto;
-  }
-}
-
-/* For small to medium devices*/
-@media screen and (min-width: 577px) and (max-width: 768px) {
-  .header-logo {
-    height: 80px;
+    display: none;
   }
 }
