@@ -1,4 +1,4 @@
-// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
+const backUpYoutubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
 const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const searchInputEl = $("#search-input"); // search input element
 const searchQuery = searchInputEl.val(); // search input value
@@ -23,8 +23,8 @@ searchBtnEl.click(function (event) {
   console.log(`User has inputted: "${searchQuery}"`);
   // ---------- search youtube section ----------
   //
-  function getYoutubeAPI() {
-    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
+  function getYoutubeAPI(youtubeKey) {
+    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
       .then(function (response) {
         return response.json();
@@ -41,7 +41,8 @@ searchBtnEl.click(function (event) {
         youtubeIFrame(videoId); //call function
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("API Error: ", error);
+        getYoutubeAPI(backUpYoutubeAPIkey);
       });
   }
   // function to create Youtube Iframe
@@ -86,7 +87,7 @@ searchBtnEl.click(function (event) {
     });
   }
   //calling the functions//
-  getYoutubeAPI();
+  getYoutubeAPI(youtubeAPIkey);
   searchWiki();
 });
 
