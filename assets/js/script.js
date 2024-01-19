@@ -22,7 +22,7 @@ searchBtnEl.click(function (event) {
   const searchQuery = searchInputEl.val();
   console.log(`User has inputted: "${searchQuery}"`);
   // ---------- search youtube section ----------
-
+  //
   function getYoutubeAPI() {
     var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
