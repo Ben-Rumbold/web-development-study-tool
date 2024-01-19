@@ -1,4 +1,4 @@
-const backUpYoutubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
+// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
 const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const searchInputEl = $("#search-input"); // search input element
 const searchQuery = searchInputEl.val(); // search input value
@@ -20,31 +20,30 @@ searchBtnEl.click(function (event) {
   // ----- search input value test -----
   event.preventDefault();
   const searchQuery = searchInputEl.val();
-  console.log(`User has inputted: "${searchQuery}"`);
+  console.log(`User has inputted: ${searchQuery}`);
   // ---------- search youtube section ----------
-  //
-  function getYoutubeAPI(youtubeKey) {
-    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&q=${searchQuery}`;
+
+  function getYoutubeAPI() {
+    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        console.log("Response data: ", data);
         // Parse the response and retrieve the title of the videos
-        const videoId = data.items[0].id.videoId;
-        // const getRandom = Math.floor(Math.random() * data.items.length);      //test, not currently working
-        // const randomVideo = data.items[getRandom];                            //test, not currently working
-        // console.log(randomVideo);                                             //test, not currently working
-        const videoURL = `https://youtube.com/watch?v=${videoId}`;
-        console.log(videoURL);
-        youtubeIFrame(videoId); //call function
+        if (data && data.items) {
+          const getRandom = Math.floor(Math.random() * data.items.length);
+          const randomVideo = data.items[getRandom];
+          youtubeIFrame(randomVideo.id.videoId); //call function
+        }
       })
+
       .catch((error) => {
         console.error("API Error: ", error);
-        getYoutubeAPI(backUpYoutubeAPIkey);
       });
   }
+
   // function to create Youtube Iframe
   function youtubeIFrame(vidID) {
     // copied the wikipedia display attributes (displayWikiResults) and function structure
@@ -87,7 +86,7 @@ searchBtnEl.click(function (event) {
     });
   }
   //calling the functions//
-  getYoutubeAPI(youtubeAPIkey);
+  getYoutubeAPI();
   searchWiki();
 });
 
