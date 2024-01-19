@@ -56,7 +56,7 @@ footer {
 
 /* media query for content section borders/ padding */
 /* Apply styles for screens with a width of 768 pixels or larger (medium and above) */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .border-top-on-md {
     border-top: none !important;
     padding-top: 0 !important;
@@ -64,10 +64,21 @@ footer {
 }
 
 /* modal media query */
-@media (max-width: 575px) {
+@media screen and (max-width: 575px) {
   .modal-dialog {
     margin-bottom: 30px;
     margin-left: 30px;
     max-width: 200px;
+  }
+  .header-logo {
+    height: 105px;
+    width: auto;
+  }
+}
+
+/* For small to medium devices*/
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .header-logo {
+    height: 80px;
   }
 }
