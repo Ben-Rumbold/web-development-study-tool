@@ -10,7 +10,7 @@ const wikiContainer = $("#wiki-container");
 $(document).ready(function () {
   $("#myModal").modal("show");
 
-  // Handle button clicks
+  // handle button clicks
   $("#okayBtn, #closeBtn").on("click", function () {
     $("#myModal").modal("hide");
   });
