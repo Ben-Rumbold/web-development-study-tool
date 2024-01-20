@@ -1,5 +1,8 @@
-// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg"; //Youtube API
-const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
+//Youtube APIs
+// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg";
+// const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
+const youtubeAPIkey = "AIzaSyBxle4CUQQLstgRRUR5PaflgXcKff1tmI0";
+
 const searchInputEl = $("#search-input"); // search input element
 const searchQuery = searchInputEl.val(); // search input value
 const searchBtnEl = $("#search-btn"); // search button element
@@ -31,7 +34,7 @@ searchBtnEl.click(function (event) {
       })
       .then(function (data) {
         console.log("Response data: ", data);
-        // Parse the response and retrieve the title of the videos
+        //get random video result from youtube
         if (data && data.items) {
           const getRandom = Math.floor(Math.random() * data.items.length);
           const randomVideo = data.items[getRandom];
