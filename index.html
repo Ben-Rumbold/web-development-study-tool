@@ -29,8 +29,8 @@
   </head>
 
   <body>
-    <!-- modal -->
-    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <!-- cookie modal -->
+    <div class="modal" id="cookieModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -64,15 +64,44 @@
       </div>
     </div>
 
+    <!-- search modal -->
+    <div class="modal" id="searchModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Please enter a valid input!</h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="okayBtn"
+              data-dismiss="modal"
+            >
+              Okay
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="closeBtn"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- header section -->
-    <header class="text-white bg-dark p-2 mb-4 mb-xl-5">
+    <header class="p-2 mb-3 border-bottom border-secondary-subtle">
       <div class="container">
         <div class="d-flex justify-content-center align-items-center">
-          <img
+          <!-- <img
             src="./assets/images/Logo-header2.png"
             alt="Logo"
             class="header-logo img-fluid me-3"
-          />
+          /> -->
           <div class="text-center">
             <h1 class="display-3 mt-3 mb-2">
               <b>Web Development Study Tool</b>
@@ -86,7 +115,30 @@
     </header>
 
     <!-- main container -->
-    <div class="container main-container">
+    <div class="container main-container mb-4">
+      <!-- dark mode/ reset icon section -->
+      <div class="container icon-container mb-3">
+        <div class="row">
+          <img
+            src="assets/images/sun-black.png"
+            alt="sun logo black"
+            class="icons dark-mode-icon col-1 ms-auto"
+            id="sun-black"
+          />
+          <img src="assets/images/moon-white.png" alt="moon logo white"
+          class="icons dark-mode-icon col-1 ms-auto"" id="moon-white" /> <img
+          src="assets/images/reset-black.png" alt="reset logo black"
+          title="Reset Search History" class="icons reset-icon col-1 ms-5
+          me-auto"" id="reset-black" />
+          <img
+            src="assets/images/reset-white.png"
+            alt="reset logo white"
+            title="Reset Search History"
+            class="icons reset-icon col-1 ms-5 me-auto"
+            id="reset-white"
+          />
+        </div>
+      </div>
       <!-- hero section -->
       <div
         class="container border-bottom border-secondary-subtle pb-2 pb-lg-4 g-0"
@@ -94,7 +146,7 @@
         <div class="row">
           <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-sm-4 mb-lg-0">
             <div class="card bg-body-tertiary h-100">
-              <i class="fa-brands fa-html5 icon text-center mt-3"></i>
+              <i class="fa-brands fa-html5 card-icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>HTML</h3>
                 <p class="card-text">
@@ -106,7 +158,7 @@
           </div>
           <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-sm-4 mb-lg-0">
             <div class="card bg-body-tertiary h-100">
-              <i class="fa-brands fa-css3-alt icon text-center mt-3"></i>
+              <i class="fa-brands fa-css3-alt card-icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>CSS</h3>
                 <p class="card-text">
@@ -118,7 +170,7 @@
           </div>
           <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-lg-0">
             <div class="card bg-body-tertiary h-100">
-              <i class="fa-brands fa-js icon text-center mt-3"></i>
+              <i class="fa-brands fa-js card-icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>JavaScript</h3>
                 <p class="card-text">
@@ -131,7 +183,7 @@
           </div>
           <div class="col-11 col-sm-6 col-lg-3 mx-auto mb-3 mb-lg-0">
             <div class="card bg-body-tertiary h-100">
-              <i class="fa-brands fa-bootstrap icon text-center mt-3"></i>
+              <i class="fa-brands fa-bootstrap card-icon text-center mt-3"></i>
               <div class="card-body">
                 <h3>Frameworks</h3>
                 <p class="card-text">
@@ -144,17 +196,18 @@
         </div>
       </div>
       <!-- input section -->
-      <div class="container col-11 col-sm-12 my-4">
+      <div
+        class="container input-container col-11 col-sm-12 my-4 pb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+      >
         <div class="row">
-          <div
-            class="py-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
-          >
+          <div class="pt-3">
             <div class="container-fluid">
-              <form class="row d-flex" role="search">
+              <form class="row d-flex" role="search" autocomplete="off">
                 <div
-                  class="col-12 col-sm-8 mx-auto mb-3 mb-sm-0 mx-sm-0 ms-sm-auto"
+                  class="col-9 col-md-8 mx-auto mb-3 mb-sm-0 mx-sm-0 ms-sm-auto"
                 >
                   <input
+                    autocomplete="off"
                     class="form-control me-2 border border-secondary-subtle"
                     id="search-input"
                     type="search"
@@ -162,7 +215,7 @@
                     aria-label="Search"
                   />
                 </div>
-                <div class="col-6 col-sm-3 col-md-2 mx-auto mx-sm-0 me-sm-auto">
+                <div class="col-3 col-md-2 mx-auto mx-sm-0 me-sm-auto">
                   <button
                     class="btn btn-outline-success btn-block"
                     id="search-btn"
@@ -176,10 +229,13 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="outer-dropdown light-input"></div>
+        </div>
       </div>
       <!-- content section -->
       <div
-        class="container col-11 col-sm-12 mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
+        class="container content-container col-11 col-sm-12 mb-3 border border-secondary-subtle rounded-2 bg-body-tertiary"
       >
         <div class="row mt-2 mt-sm-3">
           <div
@@ -209,10 +265,14 @@
 
     <!-- footer  -->
     <footer
-      class="flex justify-content-center align-items-center text-white bg-dark pt-2"
+      class="flex justify-content-center align-items-center border-top border-secondary-subtle py-2"
     >
       <p class="text-center">
-        @ Web Development Study Tool <span id="current-year"></span>
+        @ Web Development Study Tool <span id="current-year"></span
+        ><i>
+          (Adrian Tutuianu, Daria Sora, Huseyin Altin, Hannah Lassey, Ben
+          Rumbold)</i
+        >
       </p>
     </footer>
 
