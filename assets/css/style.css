@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-/* modal */
+/* ----- modal ----- */
 .modal-dialog {
   position: fixed;
   bottom: 0;
@@ -16,22 +16,77 @@
   max-width: 300px;
 }
 
+/* ----- main container ------ */
 .main-container {
   min-height: calc(100vh - 269px);
 }
 
-/* icons */
-.icon {
-  font-size: 5.5em !important;
+/* ----- dark mode/ reset icons ----- */
+.dark-body {
+  background-color: rgb(37, 43, 53) !important;
+}
+.reset-icon {
+  /* outline: 2px solid pink; */
+  width: 55px;
+  height: 33px;
+  margin-top: 1.5px;
+}
+.dark-mode-icon {
+  width: 60px;
+}
+.icons:hover {
+  cursor: pointer;
+}
+#moon-white,
+#reset-white {
+  display: none;
+}
+.reset-icon::after {
+  content: attr(title);
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity ease;
+}
+.reset-icon:hover::after {
+  opacity: 1;
 }
 
-/* adds border between youtube and wiki sections (not currently needed) */
-/* #youtube-header,
-#youtube-iframe {
-  border-right: 1.8px solid rgb(195, 195, 195);
-} */
+/* ----- cards ----- */
+.card:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px #c2c2c2;
+}
+.card-icon {
+  font-size: 5em !important;
+}
 
-/* individual wiki containers */
+/* ----- dropdown section ----- */
+.outer-dropdown {
+  display: none;
+  margin-left: 129px;
+  padding: 0px;
+  border: 1.8px solid rgb(210, 210, 210);
+  border-top: none;
+  border-radius: 6px;
+  background: white;
+  width: 823px;
+}
+.inner-dropdown {
+  width: 821px;
+  margin: 0;
+  padding: 5px 0px 5px 13px;
+}
+.inner-dropdown:hover {
+  background: rgb(249, 249, 249);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ----- content section ----- */
 .wikiElContainer,
 .youtubeElContainer {
   margin: 20px;
@@ -43,41 +98,115 @@
   justify-content: center;
   align-items: center;
 }
-
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
   border-radius: 5px;
 }
 
+/* ----- footer ----- */
 footer {
   height: 40px;
 }
 
-/* media query for content section borders/ padding */
-/* Apply styles for screens with a width of 768 pixels or larger (medium and above) */
+/* ------------------------- media queries ------------------------- */
+/* ----- below 1400px ----- */
+@media screen and (max-width: 1399px) {
+  .outer-dropdown {
+    margin-left: 115px;
+    width: 702px;
+  }
+  .inner-dropdown {
+    width: 700px;
+  }
+}
+
+/* ----- below 1200px ----- */
+@media screen and (max-width: 1199px) {
+  .outer-dropdown {
+    margin-left: 100px;
+    width: 581px;
+  }
+  .inner-dropdown {
+    width: 579px;
+  }
+}
+
+/* ----- below 992px ----- */
+@media screen and (max-width: 991px) {
+  .outer-dropdown {
+    margin-left: 80px;
+    width: 422px;
+  }
+  .inner-dropdown {
+    width: 420px;
+  }
+}
+
+/* ----- above 768px ----- */
 @media screen and (min-width: 768px) {
+  /* media query for content section borders/ padding */
   .border-top-on-md {
     border-top: none !important;
     padding-top: 0 !important;
   }
 }
 
-/* For small to medium devices*/
-@media screen and (min-width: 576px) and (max-width: 768px) {
-  .header-logo {
-    height: 105px;
+/* ----- below 768px ----- */
+@media screen and (max-width: 767px) {
+  .outer-dropdown {
+    margin-left: 24px;
+    width: 342px;
   }
+  .inner-dropdown {
+    width: 340px;
+  }
+  /* .header-logo {
+    height: 105px;
+  } */
 }
 
-/* modal media query */
+/* ----- below 575px ----- */
 @media screen and (max-width: 575px) {
   .modal-dialog {
     margin-bottom: 30px;
     margin-left: 30px;
     max-width: 200px;
   }
-  .header-logo {
+  /* .header-logo {
     display: none;
+  } */
+  .card-icon {
+    width: 4em !important;
+    margin: 15px auto 0px auto !important;
+  }
+  .outer-dropdown {
+    margin-left: 24px;
+    width: 65%;
+  }
+  .inner-dropdown {
+    width: calc(65% - 2px);
+  }
+}
+
+/* ----- below 470px ----- */
+@media screen and (max-width: 468px) {
+  .outer-dropdown {
+    margin-left: 24px;
+    width: 63%;
+  }
+  .inner-dropdown {
+    width: calc(63% - 2px);
+  }
+}
+
+/* ----- below 375px ----- */
+@media screen and (max-width: 374px) {
+  .outer-dropdown {
+    margin-left: 24px;
+    width: 60%;
+  }
+  .inner-dropdown {
+    width: calc(60% - 2px);
   }
 }
