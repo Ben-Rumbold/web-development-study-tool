@@ -186,6 +186,8 @@ function searchFunc() {
     updateDropdown(searchQuery);
     updateSearchHistory(searchQuery);
     console.log(`After search search history: ${searchHistory}`);
+    // Empty the search input
+    searchInputEl.val("");
   }
 }
 // drop down show
