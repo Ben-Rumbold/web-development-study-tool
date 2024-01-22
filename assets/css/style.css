@@ -15,13 +15,13 @@
   margin-right: 30px;
   max-width: 300px;
 }
-.logo-header {
+.header-logo {
   height: 100px;
   width: 215px;
 }
 /* ----- main container ------ */
 .main-container {
-  min-height: calc(100vh - 310px);
+  min-height: calc(100vh - 270px);
 }
 
 /* ----- dark mode/ reset icons ----- */
