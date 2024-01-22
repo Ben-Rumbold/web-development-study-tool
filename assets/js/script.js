@@ -208,7 +208,7 @@ $(document).ready(function () {
     $("#okayBtn, #closeBtn").on("click", function () {
       $("#cookieModal").modal("hide");
     });
-  }, 1000);
+  }, 1500);
 });
 // on input click
 searchInputEl.click(function () {
