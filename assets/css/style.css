@@ -1,10 +1,24 @@
-/* css reset */
+/* ----- css reset ----- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* ----- body (fade in effect) ----- */
+.fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ----- modal ----- */
@@ -21,7 +35,7 @@
 }
 /* ----- main container ------ */
 .main-container {
-  min-height: calc(100vh - 270px);
+  min-height: calc(100vh - 262px);
 }
 
 /* ----- dark mode/ reset icons ----- */
@@ -75,19 +89,20 @@
 }
 
 /* ----- dropdown section ----- */
+.inner-input-container {
+  padding: 0px;
+}
+
 .outer-dropdown {
   display: none;
-  margin-left: 129px;
   padding: 0px;
   border: 1.8px solid rgb(210, 210, 210);
   border-top: none;
   border-radius: 6px;
   background: white;
-  width: 823px;
 }
 
 .inner-dropdown {
-  width: 821px;
   margin: 0;
   padding: 5px 0px 5px 13px;
 }
@@ -96,6 +111,23 @@
   background: rgb(249, 249, 249);
   border-radius: 6px;
   cursor: pointer;
+}
+
+#search-btn {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 37px;
+}
+
+.search-text {
+  margin: 0;
+}
+
+.search-icon {
+  display: none;
+  height: 20px;
+  width: 20px;
+  margin: 0 auto;
 }
 
 /* ----- content section ----- */
@@ -117,51 +149,7 @@
   border-radius: 5px;
 }
 
-/* ----- footer ----- */
-.footer-all {
-  height: 40px;
-}
-
 /* ------------------------- media queries ------------------------- */
-/* ----- below 1400px ----- */
-@media screen and (max-width: 1399px) {
-  .outer-dropdown {
-    margin-left: 115px;
-    width: 702px;
-  }
-  .inner-dropdown {
-    width: 700px;
-  }
-}
-
-/* ----- below 1200px ----- */
-@media screen and (max-width: 1199px) {
-  .outer-dropdown {
-    margin-left: 100px;
-    width: 581px;
-  }
-  .inner-dropdown {
-    width: 579px;
-  }
-  .header-logo {
-    display: none;
-  }
-}
-
-/* ----- below 992px ----- */
-@media screen and (max-width: 991px) {
-  .outer-dropdown {
-    margin-left: 80px;
-    width: 422px;
-  }
-  .inner-dropdown {
-    width: 420px;
-  }
-  .header-logo {
-    display: none;
-  }
-}
-
 /* ----- above 768px ----- */
 @media screen and (min-width: 768px) {
   /* media query for content section borders/ padding */
@@ -173,13 +161,6 @@
 
 /* ----- below 768px ----- */
 @media screen and (max-width: 767px) {
-  .outer-dropdown {
-    margin-left: 24px;
-    width: 342px;
-  }
-  .inner-dropdown {
-    width: 340px;
-  }
   .header-logo {
     display: none;
   }
@@ -192,46 +173,22 @@
     margin-left: 30px;
     max-width: 200px;
   }
-  .header-logo {
-    display: none;
-  }
   .card-icon {
     width: 4em !important;
     margin: 15px auto 0px auto !important;
   }
-  .outer-dropdown {
-    margin-left: 24px;
-    width: 65%;
+  .search-text {
+    display: none;
   }
-  .inner-dropdown {
-    width: calc(65% - 2px);
+  .search-icon {
+    display: block;
   }
 }
 
-/* ----- below 470px ----- */
-@media screen and (max-width: 468px) {
-  .outer-dropdown {
-    margin-left: 24px;
-    width: 63%;
-  }
-  .inner-dropdown {
-    width: calc(63% - 2px);
-  }
-  .header-logo {
-    display: none;
-  }
-}
-
-/* ----- below 375px ----- */
-@media screen and (max-width: 374px) {
-  .outer-dropdown {
-    margin-left: 24px;
-    width: 60%;
-  }
-  .inner-dropdown {
-    width: calc(60% - 2px);
-  }
-  .header-logo {
-    display: none;
+/* ----- below 350px ----- */
+@media screen and (max-width: 350px) {
+  .search-icon {
+    height: 15px;
+    width: 15px;
   }
 }

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  <body>
+  <body class="fade-in">
     <!-- cookie modal -->
     <div class="modal" id="cookieModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -89,7 +89,9 @@
       </div>
     </div>
     <!-- header section -->
-    <header class="p-2 mb-3 border-bottom border-secondary-subtle">
+    <header
+      class="p-2 mb-3 bg-dark text-light border-bottom border-secondary-subtle"
+    >
       <div class="container">
         <div class="d-flex justify-content-center align-items-center">
           <img
@@ -206,7 +208,7 @@
             <div class="container-fluid">
               <form class="row d-flex" role="search" autocomplete="off">
                 <div
-                  class="col-9 col-md-8 mx-auto mb-3 mb-sm-0 mx-sm-0 ms-sm-auto"
+                  class="col-9 inner-input-container col-md-8 ms-auto me-auto me-md-2 me-lg-3"
                 >
                   <input
                     autocomplete="off"
@@ -216,23 +218,26 @@
                     placeholder="Search"
                     aria-label="Search"
                   />
+                  <div class="outer-dropdown"></div>
                 </div>
-                <div class="col-3 col-md-2 mx-auto mx-sm-0 me-sm-auto">
+                <div class="col-2 ms-auto me-auto ms-md-2 ms-lg-3 p-0">
                   <button
                     class="btn btn-outline-success btn-block"
                     id="search-btn"
                     style="width: 100%"
                     type="submit"
                   >
-                    Search
+                    <p class="search-text">Search</p>
+                    <img
+                      class="search-icon"
+                      src="./assets/images/search-icon.png"
+                      alt="search icon"
+                    />
                   </button>
                 </div>
               </form>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="outer-dropdown light-input"></div>
         </div>
       </div>
       <!-- content section -->
@@ -267,7 +272,7 @@
 
     <!-- footer  -->
     <footer
-      class="footer-all flex justify-content-center align-items-center border-top border-secondary-subtle py-2"
+      class="footer-all flex justify-content-center align-items-center bg-dark text-light border-top border-secondary-subtle px-3 px-sm-4 pt-3 pb-1"
     >
       <p class="text-center">
         @ Web Development Study Tool <span id="current-year"></span
