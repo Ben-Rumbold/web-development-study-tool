@@ -1,7 +1,7 @@
 // ---------- list of variables ----------
-// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg";
-// const youtubeAPIkey = "AIzaSyBxle4CUQQLstgRRUR5PaflgXcKff1tmI0";
-const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
+const youtubeAPIkey1 = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg";
+const youtubeAPIkey2 = "AIzaSyBxle4CUQQLstgRRUR5PaflgXcKff1tmI0";
+const youtubeAPIkey3 = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const bodyEl = $("body"); // body element
 const headerEl = $("header"); // header element
 const darkmodeBtnEl = $(".dark-mode-icon"); // both moon and sun icon
@@ -26,6 +26,8 @@ let isDark = false; // boolean isDark (gets toggled)
 let year = dayjs().format("YYYY"); // create year variable
 $("#current-year").text(year); // parse year into footer
 
+let youtubeApiKeyArr = [youtubeAPIkey1, youtubeAPIkey2, youtubeAPIkey3];
+let keyIndex = 0;
 // ---------- list of functions ----------
 // to dark mode
 function toDarkMode() {
@@ -128,10 +130,16 @@ function wikiFunc(searchQuery) {
 // youtube func
 function youtubeFunc(searchQuery) {
   // get youtube results
-  function getYoutubeAPI() {
-    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
+  function getYoutubeAPI(ytKey) {
+    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${ytKey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
       .then(function (response) {
+        if (!response.ok && keyIndex < youtubeApiKeyArr.length) {
+          keyIndex++;
+          getYoutubeAPI(youtubeApiKeyArr[keyIndex]);
+          console.log("hit");
+          return;
+        }
         return response.json();
       })
       .then(function (data) {
@@ -164,7 +172,7 @@ function youtubeFunc(searchQuery) {
     );
     youtubeIframeContainer.append(youtubeResultElement);
   }
-  getYoutubeAPI();
+  getYoutubeAPI(youtubeApiKeyArr[keyIndex]);
 }
 // search function
 function searchFunc() {
