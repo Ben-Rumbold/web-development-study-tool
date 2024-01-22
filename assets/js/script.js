@@ -1,7 +1,7 @@
 // ---------- list of variables ----------
-// const youtubeAPIkey = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg";
-// const youtubeAPIkey = "AIzaSyBxle4CUQQLstgRRUR5PaflgXcKff1tmI0";
-const youtubeAPIkey = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
+const youtubeAPIkey1 = "AIzaSyASRVTIz4SSVmUIFEnAiuaJqLwH8XwuyVg";
+const youtubeAPIkey2 = "AIzaSyBxle4CUQQLstgRRUR5PaflgXcKff1tmI0";
+const youtubeAPIkey3 = "AIzaSyCADYUZwbWtM8CDem8pnhmgeQzyc-f76Q8";
 const bodyEl = $("body"); // body element
 const headerEl = $("header"); // header element
 const darkmodeBtnEl = $(".dark-mode-icon"); // both moon and sun icon
@@ -26,6 +26,8 @@ let isDark = false; // boolean isDark (gets toggled)
 let year = dayjs().format("YYYY"); // create year variable
 $("#current-year").text(year); // parse year into footer
 
+let youtubeApiKeyArr = [youtubeAPIkey1, youtubeAPIkey2, youtubeAPIkey3];
+let keyIndex = 0;
 // ---------- list of functions ----------
 // to dark mode
 function toDarkMode() {
@@ -81,9 +83,14 @@ function searchModal() {
 // update search history (takes a callback)
 function updateSearchHistory(query) {
   if (query && query.trim() !== "") {
-    searchHistory.push(query);
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    console.log("Search History:", searchHistory);
+    // Check if the query already exists in the search history
+    if (!searchHistory.includes(query)) {
+      searchHistory.push(query);
+      localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+      console.log("Search History:", searchHistory);
+    } else {
+      console.log("Query already exists in the search history");
+    }
   }
 }
 // update dropdown
@@ -109,9 +116,10 @@ function wikiFunc(searchQuery) {
       .then((wikiData) => {
         displayWikiResults(wikiData.query.search);
       })
-      .catch((wikiError) => alert("Error" + wikiError));
+      .catch((wikiError) => {
+        alert("Error" + wikiError);
+      });
   }
-
   // display wiki results
   function displayWikiResults(wikiResults) {
     wikiContainer.empty();
@@ -128,10 +136,16 @@ function wikiFunc(searchQuery) {
 // youtube func
 function youtubeFunc(searchQuery) {
   // get youtube results
-  function getYoutubeAPI() {
-    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIkey}&q=${searchQuery}`;
+  function getYoutubeAPI(ytKey) {
+    var youtubeQueryUrl = `https://www.googleapis.com/youtube/v3/search?key=${ytKey}&q=${searchQuery}`;
     fetch(youtubeQueryUrl)
       .then(function (response) {
+        if (!response.ok && keyIndex < youtubeApiKeyArr.length) {
+          keyIndex++;
+          getYoutubeAPI(youtubeApiKeyArr[keyIndex]);
+          console.log("hit");
+          return;
+        }
         return response.json();
       })
       .then(function (data) {
@@ -142,29 +156,26 @@ function youtubeFunc(searchQuery) {
           youtubeIFrame(randomVideo.id.videoId);
         }
       })
-
       .catch((error) => {
         console.error("API Error: ", error);
       });
   }
-
   // display youtube results
   function youtubeIFrame(vidID) {
     youtubeIframeContainer.empty();
     const youtubeResultElement = $("<div>").addClass("youtubeElContainer");
-    youtubeResultElement.html(
-      `<iframe
-            class="youtube-video"
-            src="https://www.youtube.com/embed/${vidID}"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>`
-    );
+    const ytIFrame = `<iframe
+    class="youtube-video"
+    src="https://www.youtube.com/embed/${vidID}"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>`;
+    youtubeResultElement.html(ytIFrame);
     youtubeIframeContainer.append(youtubeResultElement);
   }
-  getYoutubeAPI();
+  getYoutubeAPI(youtubeApiKeyArr[keyIndex]);
 }
 // search function
 function searchFunc() {
@@ -180,6 +191,8 @@ function searchFunc() {
     updateDropdown(searchQuery);
     updateSearchHistory(searchQuery);
     console.log(`After search search history: ${searchHistory}`);
+    // Empty the search input
+    searchInputEl.val("");
   }
 }
 // drop down show
@@ -190,7 +203,6 @@ function showDropdown() {
 function hideDropdown() {
   outerDropdownEl.hide();
 }
-
 // ---------- list of events ----------
 // on page load
 $(document).ready(function () {
