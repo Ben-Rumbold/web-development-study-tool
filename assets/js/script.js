@@ -36,16 +36,12 @@ function toDarkMode() {
   moonWhiteEl.show();
   resetWhiteEl.show();
   bodyEl.addClass("dark-body");
-  headerEl.addClass("bg-dark text-light");
-  headerEl.removeClass("border-bottom");
   cardElements.removeClass("bg-body-tertiary border-secondary-subtle");
   cardElements.addClass("bg-dark text-light border-dark-subtle");
   inputContainerEl.removeClass("bg-body-tertiary border-secondary-subtle");
   inputContainerEl.addClass("bg-dark border-dark-subtle");
   contentContainerEl.removeClass("bg-body-tertiary border-secondary-subtle");
   contentContainerEl.addClass("bg-dark text-light border-dark-subtle");
-  footerEl.removeClass("border-top");
-  footerEl.addClass("bg-dark text-light");
 }
 // to light mode
 function toLightMode() {
@@ -54,23 +50,18 @@ function toLightMode() {
   sunBlackEl.show();
   resetBlackEl.show();
   bodyEl.removeClass("dark-body");
-  headerEl.removeClass("bg-dark text-light");
-  headerEl.addClass("border-bottom");
   cardElements.removeClass("bg-dark text-light border-dark-subtle");
   cardElements.addClass("bg-body-tertiary border-secondary-subtle");
   inputContainerEl.removeClass("bg-dark border-dark-subtle");
   inputContainerEl.addClass("bg-body-tertiary border-secondary-subtle");
   contentContainerEl.removeClass("bg-dark text-light border-dark-subtle");
   contentContainerEl.addClass("bg-body-tertiary border-secondary-subtle");
-  footerEl.removeClass("bg-dark text-light");
-  footerEl.addClass("border-top");
 }
 // reset searh history
 function resetSearchHistory() {
   searchHistory = [];
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-  console.log("Search History:", searchHistory);
-  console.log("Search History Reset!");
+  console.log("Search History Reset");
 }
 // search modal
 function searchModal() {
@@ -182,7 +173,6 @@ function searchFunc() {
   const searchQuery = searchInputEl.val();
   console.log(`User has inputted: ${searchQuery}`);
   if (searchQuery === "") {
-    console.log("Empty String");
     searchModal();
   } else {
     wikiFunc(searchQuery);
@@ -190,9 +180,15 @@ function searchFunc() {
     hideDropdown();
     updateDropdown(searchQuery);
     updateSearchHistory(searchQuery);
-    console.log(`After search search history: ${searchHistory}`);
-    // Empty the search input
+    scrollToContentContainer();
     searchInputEl.val("");
+  }
+}
+// scroll to content
+function scrollToContentContainer() {
+  const content = $(".content-container")[0];
+  if (content) {
+    content.scrollIntoView({ behavior: "smooth" });
   }
 }
 // drop down show
@@ -203,29 +199,30 @@ function showDropdown() {
 function hideDropdown() {
   outerDropdownEl.hide();
 }
+
 // ---------- list of events ----------
 // on page load
 $(document).ready(function () {
-  $("#cookieModal").modal("show");
-  // handle button clicks
-  $("#okayBtn, #closeBtn").on("click", function () {
-    $("#cookieModal").modal("hide");
-  });
+  setTimeout(function () {
+    $("#cookieModal").modal("show");
+    $("#okayBtn, #closeBtn").on("click", function () {
+      $("#cookieModal").modal("hide");
+    });
+  }, 1500);
 });
 // on input click
 searchInputEl.click(function () {
-  console.log(`Input clicked`);
   updateDropdown();
-  showDropdown();
+  if (searchHistory.length > 0) {
+    showDropdown();
+  }
 });
 // on click outside input or dropdown
 $(document).on("click", function (event) {
-  // Check if the clicked element is not the search input or the outer dropdown
   if (
     !searchInputEl.is(event.target) &&
     !outerDropdownEl.is(event.target) &&
     !darkmodeBtnEl.is(event.target) &&
-    !resetBtnEl.is(event.target) &&
     outerDropdownEl.has(event.target).length === 0
   ) {
     hideDropdown();
@@ -253,18 +250,16 @@ cardElements.click(function () {
 });
 // dark mode btn click
 darkmodeBtnEl.click(function () {
-  console.log("dark mode btn clicked!");
   isDark = !isDark;
   if (isDark) {
     toDarkMode();
-    console.log(`Dark mode on. isDark is ${isDark}`);
+    console.log("Dark mode on");
   } else {
     toLightMode();
-    console.log(`Dark mode off. isDark is ${isDark}`);
+    console.log("Dark mode off");
   }
 });
 // reset btn click
 resetBtnEl.click(function () {
-  console.log("Reset button clicked!");
   resetSearchHistory();
 });
