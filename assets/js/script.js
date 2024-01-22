@@ -83,9 +83,14 @@ function searchModal() {
 // update search history (takes a callback)
 function updateSearchHistory(query) {
   if (query && query.trim() !== "") {
-    searchHistory.push(query);
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    console.log("Search History:", searchHistory);
+    // Check if the query already exists in the search history
+    if (!searchHistory.includes(query)) {
+      searchHistory.push(query);
+      localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+      console.log("Search History:", searchHistory);
+    } else {
+      console.log("Query already exists in the search history");
+    }
   }
 }
 // update dropdown
