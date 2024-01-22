@@ -19,20 +19,17 @@ This is a freely accessible website to anyone possessing the link.
 
 ### Website UI:
 
-![Open page view](/assets/images/open-page.jpg)
-![Mobile view open page]()
+![Open page view, desktop](/assets/images/open-page.jpg)
+![Open page view, mobile](/assets/images/open-page-mobile-edit.jpg)
 
-Engage with the website by exploring one of the four clickable cards,
+Engage with the website by exploring one of the four clickable cards, or find the answer to your specific questions using the search-bar.
 
-![Cards close-up]()
-![Mobile cards close-up]()
-
-or find the answer to your specific questions using the search-bar.
-
-![Search-bar results view](/assets/images/search-bar-results.jpg)
-![Mobile view search-bar results]()
+![Search-bar results view, desktop](/assets/images/search-bar-results.jpg)
+![Search-bar results view, mobile](/assets/images/search-bar-results-mobile-edit.jpg)
 
 Although intended to be used for topics surrounding programming, the user can search anything!
+
+![Webpage Showcase, desktop](/assets/images/Web%20Development%20Study%20Tool-showcase-GIF.gif)
 
 ## Credits
 
