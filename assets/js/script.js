@@ -111,9 +111,10 @@ function wikiFunc(searchQuery) {
       .then((wikiData) => {
         displayWikiResults(wikiData.query.search);
       })
-      .catch((wikiError) => alert("Error" + wikiError));
+      .catch((wikiError) => {
+        alert("Error" + wikiError);
+      });
   }
-
   // display wiki results
   function displayWikiResults(wikiResults) {
     wikiContainer.empty();
@@ -150,26 +151,23 @@ function youtubeFunc(searchQuery) {
           youtubeIFrame(randomVideo.id.videoId);
         }
       })
-
       .catch((error) => {
         console.error("API Error: ", error);
       });
   }
-
   // display youtube results
   function youtubeIFrame(vidID) {
     youtubeIframeContainer.empty();
     const youtubeResultElement = $("<div>").addClass("youtubeElContainer");
-    youtubeResultElement.html(
-      `<iframe
-            class="youtube-video"
-            src="https://www.youtube.com/embed/${vidID}"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>`
-    );
+    const ytIFrame = `<iframe
+    class="youtube-video"
+    src="https://www.youtube.com/embed/${vidID}"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>`;
+    youtubeResultElement.html(ytIFrame);
     youtubeIframeContainer.append(youtubeResultElement);
   }
   getYoutubeAPI(youtubeApiKeyArr[keyIndex]);
@@ -198,7 +196,6 @@ function showDropdown() {
 function hideDropdown() {
   outerDropdownEl.hide();
 }
-
 // ---------- list of events ----------
 // on page load
 $(document).ready(function () {

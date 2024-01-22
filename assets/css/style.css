@@ -15,32 +15,40 @@
   margin-right: 30px;
   max-width: 300px;
 }
-
+.logo-header {
+  height: 100px;
+  width: 215px;
+}
 /* ----- main container ------ */
 .main-container {
-  min-height: calc(100vh - 269px);
+  min-height: calc(100vh - 310px);
 }
 
 /* ----- dark mode/ reset icons ----- */
 .dark-body {
   background-color: rgb(37, 43, 53) !important;
 }
+
 .reset-icon {
   /* outline: 2px solid pink; */
   width: 55px;
   height: 33px;
   margin-top: 1.5px;
 }
+
 .dark-mode-icon {
   width: 60px;
 }
+
 .icons:hover {
   cursor: pointer;
 }
+
 #moon-white,
 #reset-white {
   display: none;
 }
+
 .reset-icon::after {
   content: attr(title);
   position: absolute;
@@ -51,6 +59,7 @@
   opacity: 0;
   transition: opacity ease;
 }
+
 .reset-icon:hover::after {
   opacity: 1;
 }
@@ -60,6 +69,7 @@
   cursor: pointer;
   box-shadow: 2px 2px 10px #c2c2c2;
 }
+
 .card-icon {
   font-size: 5em !important;
 }
@@ -75,11 +85,13 @@
   background: white;
   width: 823px;
 }
+
 .inner-dropdown {
   width: 821px;
   margin: 0;
   padding: 5px 0px 5px 13px;
 }
+
 .inner-dropdown:hover {
   background: rgb(249, 249, 249);
   border-radius: 6px;
@@ -98,6 +110,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -105,7 +118,7 @@
 }
 
 /* ----- footer ----- */
-footer {
+.footer-all {
   height: 40px;
 }
 
@@ -130,6 +143,9 @@ footer {
   .inner-dropdown {
     width: 579px;
   }
+  .header-logo {
+    display: none;
+  }
 }
 
 /* ----- below 992px ----- */
@@ -140,6 +156,9 @@ footer {
   }
   .inner-dropdown {
     width: 420px;
+  }
+  .header-logo {
+    display: none;
   }
 }
 
@@ -161,9 +180,9 @@ footer {
   .inner-dropdown {
     width: 340px;
   }
-  /* .header-logo {
-    height: 105px;
-  } */
+  .header-logo {
+    display: none;
+  }
 }
 
 /* ----- below 575px ----- */
@@ -173,9 +192,9 @@ footer {
     margin-left: 30px;
     max-width: 200px;
   }
-  /* .header-logo {
+  .header-logo {
     display: none;
-  } */
+  }
   .card-icon {
     width: 4em !important;
     margin: 15px auto 0px auto !important;
@@ -198,6 +217,9 @@ footer {
   .inner-dropdown {
     width: calc(63% - 2px);
   }
+  .header-logo {
+    display: none;
+  }
 }
 
 /* ----- below 375px ----- */
@@ -208,5 +230,8 @@ footer {
   }
   .inner-dropdown {
     width: calc(60% - 2px);
+  }
+  .header-logo {
+    display: none;
   }
 }
