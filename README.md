@@ -24,6 +24,9 @@ Libraries: jQuery.
 
 This is a freely accessible website to anyone possessing the link. 
 
+The link to the deployed URL:
+- https://ben-rumbold.github.io/web-development-study-tool/
+
 ## Usage
 
 ### Website UI:
