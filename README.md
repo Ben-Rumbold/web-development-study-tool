@@ -112,4 +112,4 @@ Expected behaviour:
 
 - YouTube API: the videos returned from the API should be relevant to search input and the results should be randomised. When clicking inside the video frame, the video should start and pause with no errors. Due to the randomised function of the API, sometimes it returns unavailable videos (this is the only error that should occur when searching or playing the video). The video should play on the hosted website and not relocate the user to YouTube itself.
 
-- Display animation: when search input goes through, attached to the joint Wikipedia and YouTube portion, an expansion should occur which displays the user's query.
+- Display animation: when search input goes through, attached to the joint Wikipedia and YouTube portion, an expansion should occur which displays the user's query. 
