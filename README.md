@@ -93,12 +93,20 @@ SOFTWARE.
 
 In order to test our website, click on: the sun and curved arrow symbols, the four cards (HTML, CSS, JavaScript, Frameworks), enter a query into the search bar, then click the resulting buttons underneath 'YouTube' and 'Wikipedia'.
 Expected behaviour:
--Modals: when the website loads, a modal imitating cookie functions should appear. The user should have the options to click either 'Ok' or 'Cancel', both allowing you to navigate the webpage. Another modal will be present if the search input is activated when empty; this will tell the user an error occurred.
--Sun symbol: this is a button that toggles between 'light' and 'dark' theme displays; on click should change display colours.
--Curved arrow symbol: this button deletes the search-history list that appears when clicking inside the search-bar. The list should have functional buttons that search the website for the specific item when clicked. It displays the most recent searches at the top and does not repeat them in the list (re-searching items without emptying the search-history will not add or change the order of the list items).
--Cards: each card is a button that searches the specified content and displays them underneath the search-bar. The website has an animation function to pull you down to the results. These clicks will be stored and displayed in the history list.
--Search-bar: accepts any user input although undecipherable searches may result in: empty results, closest-relation results or uneven results (either API returns an outcome when the other doesn't). The animation function pulls you down to the results section, dependant on screen layout.
--Search-button: input should be pushed into the APIs either on the click of the search-button or at the press of the enter key.
--Wikipedia API: the articles returned should be relevant to the search input. The provided 'Read More' button should relocate the user to the intended article, on a separate tab, at the Wikipedia website.
--YouTube API: the videos returned from the API should be relevant to search input and the results should be randomised. When clicking inside the video frame, the video should start and pause with no errors. Due to the randomised function of the API, sometimes it returns unavailable videos (this is the only error that should occur when searching or playing the video). The video should play on the hosted website and not relocate the user to YouTube itself.
--Display animation: when search input goes through, attached to the joint Wikipedia and YouTube portion, an expansion should occur which displays the user's query.
+- Modals: when the website loads, a modal imitating cookie functions should appear. The user should have the options to click either 'Ok' or 'Cancel', both allowing you to navigate the webpage. Another modal will be present if the search input is activated when empty; this will tell the user an error occurred.
+
+- Sun symbol: this is a button that toggles between 'light' and 'dark' theme displays; on click should change display colours.
+
+- Curved arrow symbol: this button deletes the search-history list that appears when clicking inside the search-bar. The list should have functional buttons that search the website for the specific item when clicked. It displays the most recent searches at the top and does not repeat them in the list (re-searching items without emptying the search-history will not add or change the order of the list items).
+
+- Cards: each card is a button that searches the specified content and displays them underneath the search-bar. The website has an animation function to pull you down to the results. These clicks will be stored and displayed in the history list.
+
+- Search-bar: accepts any user input although undecipherable searches may result in: empty results, closest-relation results or uneven results (either API returns an outcome when the other doesn't). The animation function pulls you down to the results section, dependant on screen layout.
+
+- Search-button: input should be pushed into the APIs either on the click of the search-button or at the press of the enter key.
+
+- Wikipedia API: the articles returned should be relevant to the search input. The provided 'Read More' button should relocate the user to the intended article, on a separate tab, at the Wikipedia website.
+
+- YouTube API: the videos returned from the API should be relevant to search input and the results should be randomised. When clicking inside the video frame, the video should start and pause with no errors. Due to the randomised function of the API, sometimes it returns unavailable videos (this is the only error that should occur when searching or playing the video). The video should play on the hosted website and not relocate the user to YouTube itself.
+
+- Display animation: when search input goes through, attached to the joint Wikipedia and YouTube portion, an expansion should occur which displays the user's query.
