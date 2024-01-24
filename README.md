@@ -27,6 +27,12 @@ This is a freely accessible website to anyone possessing the link.
 The link to the deployed URL:
 - https://ben-rumbold.github.io/web-development-study-tool/
 
+The link to the GitHub repository:
+- https://github.com/Ben-Rumbold/web-development-study-tool
+
+The link to the presentation:
+- https://docs.google.com/presentation/d/1NaG5qHbLfoJfsgdhqXw6NbF_jlT_rC4mX48KWHm4U54/edit#slide=id.g2b0421c1504_0_161
+
 ## Usage
 
 ### Website UI:
